@@ -1,0 +1,35 @@
+.search {
+    text-align: center;
+    background: url('/assets/anime-universe.jpeg');
+    background-size: cover;
+    height: 40%;
+}
+
+h2, p {
+    color:beige;
+}
+
+.search-form {
+    margin: 3rem 0rem;
+}
+
+.search-input {
+    padding-bottom: 0.3rem;
+    padding-left: 0.7rem;
+    border-left: solid;
+}
+
+.search-form-field {
+    border: solid;
+    border-radius: 1rem;
+    padding: revert;
+    width: 50%;
+    background-color: beige;
+
+}
+
+.search-icon {
+    padding-bottom: 0.5rem;
+    padding-right: 0.3rem;
+}
+
