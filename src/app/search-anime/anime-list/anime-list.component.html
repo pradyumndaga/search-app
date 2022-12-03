@@ -1,2 +1,3 @@
-<app-anime-card></app-anime-card>
-<app-anime-card></app-anime-card>
+<div *ngFor="let anime of animeList.data">
+    <app-anime-card [anime]="anime"></app-anime-card>
+</div>

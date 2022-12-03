@@ -1,10 +1,10 @@
 export type Pagination = {
-  lastVisiblePage: number;
-  hasNextPage: boolean;
-  currentPage: number;
+  last_visible_page: number;
+  has_next_page: boolean;
+  current_page: number;
   items: {
     count: number;
     total: number;
-    perPage: number;
+    per_page: number;
   };
 };

@@ -1,3 +1,14 @@
-<app-search></app-search>
+<app-search (animeSearchtxt)="UpdateAmineListFromSearch($event)" [totalAnime]="length"></app-search>
 <hr>
-<app-anime-list></app-anime-list>
+<div *ngIf="animeList && animeList.pagination.items.count">
+    <app-anime-list [animeList]="animeList"></app-anime-list>
+    <mat-paginator [length]="length"
+        [pageSize]="15"
+        [pageIndex]="pageIndex"
+        (page)="handlePageEvent($event)"
+        aria-label="Select page">
+    </mat-paginator>
+</div>
+<div *ngIf="!animeList || !animeList.pagination.items.count" class="no-list">
+    <h3>No Results Found!!!</h3>
+</div>

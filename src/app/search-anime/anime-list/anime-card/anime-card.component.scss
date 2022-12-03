@@ -20,24 +20,52 @@
     margin-bottom: 0rem;
 }
 
+.anime-title-mobile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: solid;
+    padding: 0.5rem;
+    margin-bottom: 0rem;
+}
+
 .anime-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.anime-card-action {
-    text-align: right;
-}
 
 .anime-name-div {
-    width: 90%;
+    width:90%;
+}
+
+.anime-name-div-mobile {
+    display: flex;
+    flex-direction: row;
+}
+
+.anime-name-fav-div {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow-wrap: break-word;
+}
+
+.anime-name-fav-div-mobile {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow-wrap: break-word;
+    margin-left: 1rem;
 }
 
 .anime-name {
     margin-top: 0rem;
     margin-left: 1rem;
     margin-bottom: 0rem;
+    width: 85%;
 }
 
 .anime-alias-div {
@@ -61,9 +89,41 @@
     margin-left: 2rem;
 }
 
+.arrow-btn-div-mobile {
+    margin-left: 9rem;
+    margin-right: auto;
+    width: 100%;
+}
+
 .arrow-btn {
     font-size: 3rem;
     text-align: center;
+    color: blue;
+    margin-top: 1.5rem;
+}
+
+.arrow-btn-mobile {
+    font-size: 3rem;
+    text-align: center;
+    color: blue;
+}
+
+.favorite-icon {
+    color: red;
+}
+
+.favorite-icon-mobile {
+    color: red;
+    margin-left: 1rem;
+}
+
+.favorite-txt {
+    margin-top: auto;
+    margin-left: 1rem;
+}
+
+.favorite-txt-mobile {
+    margin-top: 0rem;
 }
  
   

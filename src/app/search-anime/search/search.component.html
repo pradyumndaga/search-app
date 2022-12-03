@@ -1,12 +1,10 @@
 <div class="search">
-    <h2>Search Anime Characters</h2>
+    <h1 class="search-text">Search Anime Characters</h1>
     <form class="search-form">
         <mat-form-field class="search-form-field" appearance="fill">
-        <input class="search-input w-s-60" type="text" matInput placeholder="Search" name= "search" [(ngModel)]= "search" (input)="filterList($event.target)">
-        <mat-icon class='search-icon' color="primary" matPrefix>search</mat-icon>
+            <input class="search-input w-s-60" type="text" matInput placeholder="Search" name= "search" (input)="filterList($event.target)">
+            <mat-icon class='search-icon' color="primary" matPrefix>search</mat-icon>
         </mat-form-field>
-        <br/>
-        {{search}}
         </form>
-    <p>{{ searchTxt }}</p>
+    <p class="search-text">{{ totalMatchTxt }}</p>
 </div>

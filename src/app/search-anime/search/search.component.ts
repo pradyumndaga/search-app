@@ -1,40 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { debounceTime, Subject, Subscription } from 'rxjs';
-import { AnimeDetailService } from 'src/app/store/anime-details/api/anime-details.api';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  searchTxt = '';
-  search = '';
+  @Input() set totalAnime(value: number) {
+    this.totalMatchTxt = `Total ${value} matching anime characters found`;
+  }
+  @Output() animeSearchtxt = new EventEmitter<string>();
   searchModelChanged: Subject<string> = new Subject<string>();
   searchWordSubscription!: Subscription;
   debounceTime = 500;
-  constructor(
-    private animeDetailService: AnimeDetailService,
-  ) { }
+  totalMatchTxt = '';
+  constructor() {}
 
   ngOnInit(): void {
-    this.searchTxt = 'searchTxt';
     this.searchWordSubscription = this.searchModelChanged
-      .pipe(
-        debounceTime(this.debounceTime),
-      )
+      .pipe(debounceTime(this.debounceTime))
       .subscribe((val) => {
-        this.functionToBeCalled(val);
+        this.emitSearchText(val);
       });
   }
-  functionToBeCalled(val: string) {
-    console.log(val);
-    console.log(this.animeDetailService.fetchAnimeList());
+  emitSearchText(val: string) {
+    this.animeSearchtxt.emit(val);
   }
 
   filterList(event: any) {
-    console.log(event.value);
     this.searchModelChanged.next(event.value);
   }
-
 }

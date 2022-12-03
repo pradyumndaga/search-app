@@ -1,19 +1,61 @@
-<mat-card class="anime-card">
-  <mat-card-content class="anime-content">
-    <mat-card-title class="anime-title">
-        <img mat-card-sm-image class="anime-img" src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
-        <div class="anime-name-div">
-            <h3 class="anime-name">Shiba Inu</h3>
-            <div class="anime-alias-div">
-                <p class="anime-alias"> bsld dfjdfk</p>
-                <p class="anime-alias"> bsld dfjdfk</p>
-            </div>
-        </div>
-    </mat-card-title>
-    <mat-card-actions class="anime-card-action">
-        <div mat-button class="arrow-btn-div">
-            <mat-icon class="arrow-btn">arrow_forward</mat-icon>
-        </div>
-    </mat-card-actions>
-  </mat-card-content>
-</mat-card>
+<!-- Desktop View -->
+<div *ngIf="!isMobile">
+    <mat-card class="anime-card">
+    <mat-card-content class="anime-content">
+        <mat-card-title class="anime-title">
+            <img mat-card-sm-image class="anime-img" [src]="anime.img" >
+            <div class="anime-name-div">
+                <div class="anime-name-fav-div">
+                    <h3 class="anime-name">{{ anime.name }}</h3>
+                    <mat-icon class="favorite-icon">favorite</mat-icon> 
+                    <p class="favorite-txt">
+                        {{anime.favorites}}
+                    </p>
+                </div>
+                <div class="anime-alias-div">
+                    <div *ngFor="let nickname of anime.nicknames" >
+                        <p class="anime-alias"> {{nickname}}</p>
+                    </div>
+                </div>
+            </div>       
+        </mat-card-title>
+        <mat-card-actions class="anime-card-action">
+            <a target="_blank" [href]="anime.url" class="arrow-btn-div">
+                <mat-icon class="arrow-btn">arrow_forward</mat-icon>
+            </a>
+        </mat-card-actions>
+    </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- Mobile View -->
+<div *ngIf="isMobile">
+    <mat-card class="anime-card">
+        <mat-card-content class="anime-content">
+          <mat-card-title class="anime-title-mobile">
+              <div class="anime-name-div-mobile">
+                <img mat-card-sm-image class="anime-img" [src]="anime.img" >
+                <div class="anime-name-fav-div-mobile">
+                    <h3 class="anime-name">{{ anime.name }}</h3>
+                    <mat-icon class="favorite-icon-mobile">favorite</mat-icon> 
+                    <p class="favorite-txt-mobile">
+                        {{anime.favorites}}
+                    </p>
+                </div>    
+              </div>
+              <div>
+                <div class="anime-alias-div">
+                    <div *ngFor="let nickname of anime.nicknames" >
+                      <p class="anime-alias"> {{nickname}}</p>
+                    </div>
+                </div>
+              </div>        
+          </mat-card-title>
+          <mat-card-actions class="anime-card-action">
+              <a target="_blank" [href]="anime.url" class="arrow-btn-div-mobile">
+                  <mat-icon class="arrow-btn-mobile">arrow_forward</mat-icon>
+              </a>
+          </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</div>

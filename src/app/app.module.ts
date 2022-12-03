@@ -10,12 +10,12 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
+  MatPaginatorModule,
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnimeCardComponent } from './search-anime/anime-list/anime-card/anime-card.component';
 import { AppState } from './store/types/app-state.type';
 import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatIconModule,
     MatCardModule,
+    MatPaginatorModule,
     HttpClientModule,
   ],
   providers: [],
